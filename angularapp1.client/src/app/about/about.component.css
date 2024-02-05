@@ -1,0 +1,91 @@
+.site-footer {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: Arimo, sans-serif;
+  font-weight: bold;
+  border-top: 2px solid white;
+  flex-shrink: 0;
+}
+
+.footer-content p,
+.footer-bottom p {
+  margin: 10px;
+}
+
+.footer-socials a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-photos .photo-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 449px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.footer-photos .photo-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.footer-photos .photo-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-photos .photo-container:hover .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.footer-photos .photo-container:hover img {
+  filter: blur(5px);
+}
+
+.footer-photos .photo-container .overlay .instagram-icon {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer-photos .photo-container .overlay:hover .instagram-icon {
+  transform: scale(1.1);
+}
+
+.footer-nav {
+  margin: 20px 0;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  font-size: small;
+}

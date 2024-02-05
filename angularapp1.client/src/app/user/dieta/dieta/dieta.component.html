@@ -1,0 +1,61 @@
+<div id="main-container">
+
+  <div class="left">
+
+
+
+
+    <mat-card id="details" class="text-center">
+
+      <mat-card-header class="test1" style="margin-bottom: 5rem; font-size: 2rem; font-weight: bold;">
+        <mat-card-title>Jadłospis na dzisjeszy dzień</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="test1">
+
+        <div>
+          <mat-form-field class="example-full-width">
+
+            <mat-label>Wpisz zawartość kaloryczną</mat-label>
+
+
+            <input matInput type="text" [formControl]="title" [errorStateMatcher]="matcher" [(ngModel)]="value">
+            @if (title.hasError('required')) {
+            <mat-error>Zawartość kaloryczna jest <strong>obowiązkowa</strong></mat-error>
+            }
+            @if (value) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+
+            <mat-label>Wpisz czego nie lubisz</mat-label>
+
+
+            <input matInput type="text" [formControl]="adds" [errorStateMatcher]="matcher" [(ngModel)]="value1">
+          </mat-form-field>
+        </div>
+        <div style=" margin-top:2rem">
+          <button mat-button color="primary-grey" style="background-color: white;" (click)="addExercise()">Zaproponuj jadłospis</button>
+        </div>
+
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+  <div  class="right">
+    <div style="display: flex; justify-content: center; height: 10vh; width: 50vw;">
+      <h1 style="color:white; "> Jadłospis na dziś</h1>
+    </div>
+
+    <div *ngIf="res"  style="background-color: white; overflow: auto; height: 90vh; width: 45vw; border-radius: 10px; ">
+      <pre style="color: black; font-family: Arimo, sans-serif;">{{ res.value }}</pre>
+    </div>
+  </div>
+
+    <router-outlet></router-outlet>
+
+</div>

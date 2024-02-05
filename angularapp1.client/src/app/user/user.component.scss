@@ -1,0 +1,50 @@
+.h {
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link .mdc-tab__text-label{
+    color: rgb(255, 255, 255)!important;
+}
+::ng-deep .mat-mdc-tab-header-pagination-chevron {
+    border-color: var(--mdc-theme-on-surface, rgb(255, 255, 255)) !important;
+}
+// change Active Tab Header Label Color (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+  color: white !important;
+}
+// change Active Tab Bottom Border Color (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: var(--mdc-tab-indicator-active-indicator-color, rgb(255, 255, 255)) !important;
+}
+// change Background Ripple Color on Click (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mdc-tab__ripple::before,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab .mat-ripple-element,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-header-pagination .mat-ripple-element,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link .mat-ripple-element {
+  background-color: white;
+}
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: white;
+}
+
+
+.mat-mdc-header-cell {
+  color: white;
+
+}
+.mat-mdc-table {
+  background-color: transparent !important;
+}
+.mat-mdc-row {
+  color: white !important;
+}

@@ -1,0 +1,32 @@
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+button.mat-icon-button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+  button.mat-icon-button:hover {
+    background-color: darkgrey;
+  }
+
+.toolbar-logo-link {
+  display: flex;
+  align-items: center; /* Wyrównuje elementy pionowo */
+  height: 64px; /* Ustala wysokość dla linku, dostosuj jeśli to konieczne */
+}
+
+.toolbar-logo {
+  height: 50px; /* Ustala wysokość dla logo */
+  margin-right: 10px; /* Dodaje odstęp między logo a tytułem */
+}
+
+.toolbar-title {
+  font-family: 'Verdana', sans-serif; /* Dodano ogólną rodzinę czcionek dla bezpieczeństwa */
+  font-weight: bold;
+  display: inline-block; /* Zapewnia, że span zachowa białe przestrzenie wokół tekstu */
+  vertical-align: middle; /* Wyrównuje tekst do środka w pionie */
+}

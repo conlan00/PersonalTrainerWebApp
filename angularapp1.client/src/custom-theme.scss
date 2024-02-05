@@ -1,0 +1,16 @@
+// Custom Theming for Angular Material
+@use '@angular/material' as mat;
+
+// Include the common styles for Angular Material
+@include mat.core();
+
+// Define the palettes for your theme
+$angularapp1-client-primary: mat.define-palette(mat.$indigo-palette);
+$angularapp1-client-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$angularapp1-client-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object
+$angularapp1-client-theme: mat.define-light-theme(( color: ( primary: $angularapp1-client-primary, accent: $angularapp1-client-accent, warn: $angularapp1-client-warn, ) ));
+
+// Include theme styles for components used in your app
+@include mat.all-component-themes($angularapp1-client-theme);

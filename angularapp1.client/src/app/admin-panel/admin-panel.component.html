@@ -1,0 +1,131 @@
+<!--<div class="h" style="margin-top: auto">-->
+<!--  <mat-drawer-container class="example-container" >
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened position="start" >
+      <mat-nav-list>
+        <a mat-list-item (click)="this.spinner.startspinner()" routerLink="/admin/dashboard"><mat-icon>dashboard</mat-icon>Dashboards</a>
+        <a mat-list-item (click)="this.spinner.startspinner()" routerLink="/admin/createtraining"><mat-icon>library_add</mat-icon>Dodaj oferte</a>
+        <a mat-list-item  routerLink="/admin/plan"><mat-icon>supervised_user_circle</mat-icon>Dodaj trening</a>
+        <a mat-list-item routerLink="/tab3">Dodaj ćwiczenie</a>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>-->
+<div style="color:white;justify-content:center; align-items:center;width:100vw;display:flex;">
+  Witaj w panelu administratora!!
+</div>
+<div id="main-container">
+
+  <div class="left">
+
+    <div class="left-top" (click)="handleClick('left-top')">
+      <div class="overlay"></div>
+      <div class="content">Otwórz panel dashboardów</div>
+    </div>
+    <div class="left-bottom" (click)="handleClick('left-bottom')">
+      <div class="overlay"></div>
+      <div class="content">Dodaj ofertę</div>
+    </div>
+  </div>
+  <div class="right">
+
+    <div class="right-top" (click)="handleClick('right-top')">
+      <div class="overlay"></div>
+      <div class="content">Dodaj ćwiczenie</div>
+    </div>
+    <div class="right-bottom" (click)="handleClick('right-bottom')">
+      <div class="overlay"></div>
+      <div class="content">Dodaj trening użytkownikowi</div>
+    </div>
+  </div>
+    <router-outlet></router-outlet>
+  
+</div>
+
+
+
+
+<!-- Zawartość główna komponentu app-about -->
+<!--   <mat-tab-group>
+     <mat-tab>
+       <ng-template mat-tab-label>
+         <mat-icon>library_add</mat-icon>
+         Add new training offer
+       </ng-template>
+       <mat-card class="example-card">
+         <div class="center-container">
+           <form class="example-form">
+             <mat-form-field class="example-full-width">
+               <mat-label>Trening name</mat-label>
+               <input type="text" matInput [formControl]="treningName" placeholder="ex. Full-body workout">
+               @if (treningName.hasError('text') && !treningName.hasError('required')) {
+               <mat-error>Please enter a trening Name</mat-error>
+               }
+               @if (treningName.hasError('required')) {
+               <mat-error>Trening name is <strong>required</strong></mat-error>
+               }
+             </mat-form-field>
+           </form>
+
+         </div>
+         <div class="center-container">
+           <div class="zdjecie">
+             <label for="fileInput" class="btn">
+               <span class="icon"><mat-icon>cloud_upload</mat-icon></span>
+               <span class="text">Wybierz plik</span>
+               <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;">
+             </label>
+             <div *ngIf="imageUrl">
+               <img [src]="imageUrl" alt="Preview">
+             </div>
+           </div>
+         </div>
+
+       </mat-card>
+     </mat-tab>
+
+     <mat-tab>
+       <ng-template mat-tab-label>
+         <mat-icon class="example-tab-icon"><mat-icon>supervised_user_circle</mat-icon></mat-icon>
+         Create Training for user
+       </ng-template>
+       <div class="card">
+         <p-splitter [style]="{ height: '300px' }" [panelSizes]="[20, 80]" [minSizes]="[10, 0]" styleClass="mb-5">
+           <ng-template pTemplate>
+             <div class="col flex align-items-center justify-content-center">Panel 1</div>
+           </ng-template>
+           <ng-template pTemplate>
+             <p-splitter layout="vertical" [panelSizes]="[15, 85]">
+               <ng-template pTemplate>
+                 <div style="flex-grow: 1;" class="flex align-items-center justify-content-center">Panel 2</div>
+               </ng-template>
+               <ng-template pTemplate>
+                 <p-splitter [panelSizes]="[20, 80]">
+                   <ng-template pTemplate>
+                     <div class="col flex align-items-center justify-content-center">Panel 3</div>
+                   </ng-template>
+                   <ng-template pTemplate>
+                     <div class="col flex align-items-center justify-content-center">Panel 4</div>
+                   </ng-template>
+                 </p-splitter>
+               </ng-template>
+             </p-splitter>
+           </ng-template>
+         </p-splitter>
+       </div>
+
+     </mat-tab>
+
+     <mat-tab>
+       <ng-template mat-tab-label>
+         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+         Third
+       </ng-template>
+
+       Content 3
+     </mat-tab>
+   </mat-tab-group>-->
+<!--</div>
+-->

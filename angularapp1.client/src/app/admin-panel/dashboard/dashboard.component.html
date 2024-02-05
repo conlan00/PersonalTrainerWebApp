@@ -1,0 +1,74 @@
+<!--<div class="test">
+  <mat-grid-list cols="2" rowHeight="2:1" style="width: 100vw;height: 100vh ;">
+    <mat-grid-tile>
+          <div class="wykres">
+            <canvas id="myChart"></canvas>
+          </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="wykres1">
+        <canvas id="myChartLine"></canvas>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="metric-container">
+        <h2>Całkowity przychód</h2>
+        <p class="total-income">{{ totalIncome  | currency:'USD':'symbol':'1.2-2' }}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="metric-container2">
+        <h2>Ilość użytkowników</h2>
+        <p class="count-users">{{ totalUsers }}</p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+-->
+<button  routerLink="/admin">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div id="main-container">
+
+  <div class="left">
+
+    <div class="left-top">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="wykres">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="left-bottom">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="metric-container">
+          <h2>Całkowity przychód</h2>
+          <p class="total-income">{{ totalIncome  | currency:'USD':'symbol':'1.2-2' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+
+    <div class="right-top">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="wykres1">
+          <canvas id="myChartLine"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="right-bottom">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="metric-container2">
+          <h2>Ilość użytkowników</h2>
+          <p class="count-users">{{ totalUsers }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

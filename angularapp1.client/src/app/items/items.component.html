@@ -1,0 +1,84 @@
+<!--<div class="my-container max-auto border border dark">
+  <div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-secondary">grid</button>
+      <button type="button" class="btn btn-outline-secondary">list</button>
+    </div>
+  </div>
+  <div class="w-50 d-flex">
+    <span class="me-5 d-flex align-items-center fs-5 fw-bold">Sort by</span>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-secondary">
+        default
+      </button>
+      <button type="button" class="btn btn-outline-secondary">
+        Price (High to low)
+      </button>
+      <button type="button" class="btn btn-outline-secondary">
+        Price (Low to high)
+      </button>
+    </div>
+  </div>
+</div>
+-->
+<!-- product-list.component.html -->
+<!-- product-list.component.html -->
+<!-- product-list.component.html -->
+
+
+<div class="products-container">
+  <div *ngFor="let item of items; let index = index" class="product-card">
+    <div class="product-image-container">
+      <img class="product-image" [src]="imageUrls[index]" alt="{{ item.name }}">
+    </div>
+    <div class="product-info">
+      <h2 class="product-name">{{ item.name }}</h2>
+      <p class="product-price">{{ item.price }} $</p>
+      <div class="product-actions">
+        <button class="btn btn-secondary" (click)="buyNow(imageUrls[index],item)" routerLink="/payment" >Kup teraz</button>
+      <!--  <button class="btn btn-secondary" (click)="addToCart(item)" [disabled]="itemsService.isItemInCart(item)">Dodaj do koszyka</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="h" style="margin-top: auto">
+  <div fxLayout="row wrap">
+    <div *ngFor="let item of items; let i = index" fxFlex="calc(33.33% - 20px)" class="product-card">
+      <mat-card class="product-card-inner">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img [src]="imageUrls[i]" alt="{{ item.name }}" class="product-image">
+          <p>Price: ${{ item.price }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="buyNow(imageUrls[i],item)" routerLink="/payment">Kup teraz</button>-->
+         <!--// <button mat-button color="accent" (click)="addToCart(item)">Dodaj do koszyka</button>-->
+        <!--</mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>-->
+

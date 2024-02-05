@@ -1,0 +1,64 @@
+<footer class="site-footer">
+  <!-- <div class="footer-content">
+     <p>You subscribe, I get you the best offers 🔥</p>
+     <div>
+       <a>Your Trainer</a>
+     </div>
+     <div class="footer-photos">
+       <div class="photo-container blur">
+         <a href="" target="_blank" class="photo-container blur">
+           <img src="assets/dalle-1.png" alt="Opis zdjęcia">
+           <div class="overlay">
+             <img src="assets/insta.png" alt="Instagram" class="instagram-icon">
+           </div>
+         </a>
+       </div>
+       <div class="photo-container blur">
+         <a href="" target="_blank" class="photo-container blur">
+           <img src="assets/dalle-2.png" alt="Opis zdjęcia">
+           <div class="overlay">
+             <img src="assets/insta.png" alt="Instagram" class="instagram-icon">
+           </div>
+         </a>
+       </div>
+       <div class="photo-container blur">
+         <a href="" target="_blank" class="photo-container blur">
+           <img src="assets/dalle-3.png" alt="Opis zdjęcia">
+           <div class="overlay">
+             <img src="assets/insta.png" alt="Instagram" class="instagram-icon">
+           </div>
+         </a>
+       </div>
+       <div class="photo-container blur">
+         <a href="" target="_blank" class="photo-container blur">
+           <img src="assets/dalle-4.png" alt="Opis zdjęcia">
+           <div class="overlay">
+             <img src="assets/insta.png" alt="Instagram" class="instagram-icon">
+           </div>
+         </a>
+       </div>
+     </div>
+     <nav class="footer-nav">
+       <a href="/search">Search</a>
+       <a href="/terms-conditions">Terms & Conditions</a>
+       <a href="/privacy-policy">Privacy Policy</a>
+       <a href="/return-refund">Return & Refund Policy</a>
+     </nav>
+   </div>
+   <div class="footer-bottom">
+     <p>© 2023, JMeister</p>
+   </div>-->
+  <p>You subscribe, I get you the best offers 🔥</p>
+  <carousel [itemsPerSlide]="itemsPerSlide"
+            [singleSlideOffset]="singleSlideOffset"
+            [noWrap]="noWrap"
+            [interval]="3000"
+            [startFromIndex]="3"
+            (slideRangeChange)="onSlideRangeChange($event)">
+    <slide *ngFor="let slide of slides; let index=index">
+      <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+      <div class="carousel-caption">
+      </div>
+    </slide>
+  </carousel>
+</footer>

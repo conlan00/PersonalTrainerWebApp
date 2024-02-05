@@ -1,0 +1,253 @@
+/*.h {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+  color: rgb(255, 255, 255) !important;
+}
+
+::ng-deep .mat-mdc-tab-header-pagination-chevron {
+  border-color: var(--mdc-theme-on-surface, rgb(255, 255, 255)) !important;
+}
+// change Active Tab Header Label Color (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+  color: white !important;
+}
+// change Active Tab Bottom Border Color (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: var(--mdc-tab-indicator-active-indicator-color, rgb(255, 255, 255)) !important;
+}
+// change Background Ripple Color on Click (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mdc-tab__ripple::before,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab .mat-ripple-element,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-header-pagination .mat-ripple-element,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link .mat-ripple-element {
+  background-color: white;
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: white;
+}
+
+
+.mat-mdc-header-cell {
+  color: white;
+}
+
+.mat-mdc-table {
+  background-color: transparent !important;
+}
+
+.mat-mdc-row {
+  color: white !important;
+}
+.example-form {
+    display:flex;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  flex-direction: column;*/ /* Ustawienie kierunku flex na kolumnę */
+/*}
+
+.zdjecie {
+ // border: 2px solid #ccc;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  text-align: center;*/ /* Dodaj właściwość text-align, aby przycisk był na środku */
+/*}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  font-family: 'Verdana', sans-serif;
+  position: absolute;
+  top: -20%;*/ /* Ustaw przycisk na środku pionowo */
+  /*left: 50%;*/ /* Ustaw przycisk na środku poziomo */
+  /*transform: translate(-50%, -50%);*/ /* Skoryguj położenie przycisku na środku */
+/*}
+
+.btn .icon {
+  margin-right: 5px;
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+.btn:active {
+  background-color: #e0e0e0;
+}
+
+.zdjecie input {
+  display: none;
+}
+
+.example-card {
+  width: 50%;
+  margin: 5vh auto 0;*/ /* Dodaj auto dla lewej i prawej marginesu */
+/*}
+
+.zdjecie img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: cover;
+}*/
+
+/* app-about.component.css */
+/*.example-container {
+  overflow: hidden !important;
+  margin-top: -50px;*/
+  /*   margin-left:-15px;*/
+  /*width: 100%;*/ /* 100% szerokości widoku (viewport width) */
+  /*height: 100vh;*/ /* 100% wysokości widoku (viewport height) */
+
+  /*display: flex;*/ /* Aby umożliwić pasek boczny i zawartość zajmować całą dostępną przestrzeń */
+/*}
+
+.example-sidenav-content {
+  flex-grow: 1;*/ /* Rozszerza się, aby wypełnić dostępną przestrzeń */
+  /*display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.example-sidenav {
+  padding: 20px;
+
+}
+.mat-drawer-container {
+
+  background-color: transparent !important;*/ /* Zastosowanie koloru białego z użyciem !important */
+/*}
+::ng-deep .mat-drawer-content {
+  overflow: hidden !important;
+}*/
+////tamto nie wyzej nie
+#main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.5); /* Początkowe przyciemnienie */
+}
+
+.left,
+.right {
+  background: rgba(0, 0, 0, 0.6); /* Początkowe przyciemnienie */
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 50vw; /* Dla lewej i prawej połowy ekranu */
+}
+
+.overlay {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Tło za mgłą */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.left-top:hover .overlay,
+.left-bottom:hover .overlay,
+.right-top:hover .overlay,
+.right-bottom:hover .overlay {
+  opacity: 1;
+}
+
+/* Dodatkowa animacja (przykładowa) */
+.overlay:hover {
+  filter: brightness(1.2); /* Rozjaśnienie */
+}
+
+/* Styl dla twoich divów */
+.left-top,
+.right-top,
+.left-bottom,
+.right-bottom {
+  height: 50vh; /* Zmniejszona wysokość dla lepszej estetyki */
+  width: 50vw;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5); /* Początkowe przyciemnienie */
+}
+.left-top {
+  background: rgba(0, 0, 0, 0.5); /* Początkowe przyciemnienie */
+  background-image: url('../images/dash.jpg');
+  background-size: cover;
+}
+
+.right-top {
+  background-image: url('../images/exer.jpg');
+  background-size: cover;
+}
+
+.left-bottom {
+  background: rgba(0, 0, 0, 0.6);  
+  background-image: url('../images/offer.jpg');
+  background-size: cover;
+}
+
+.right-bottom {
+  background-image: url('../images/train.jpg');
+  background-size: cover;
+}
+
+.content {
+
+    font-size:3rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  color:aliceblue;
+}
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #2980b9; /* Kolor tła po najechaniu */
+}

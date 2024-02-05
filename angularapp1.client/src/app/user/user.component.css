@@ -1,0 +1,20 @@
+/* Styl dla mat-tab-group z klasą custom-tab-group */
+.custom-tab-group {
+  background-color: white; /* Tło na biały */
+  color: black; /* Kolor tekstu na czarny */
+}
+
+/* Styl dla mat-tab z klasą custom-tab */
+.custom-tab {
+  background-color: white; /* Tło na biały dla mat-tab */
+  color: black; /* Kolor tekstu na czarny dla mat-tab */
+}
+.h {
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.hidden {
+  display: none;
+}

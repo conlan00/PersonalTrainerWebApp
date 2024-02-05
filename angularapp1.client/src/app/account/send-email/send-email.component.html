@@ -1,0 +1,47 @@
+
+<div class="h" style="margin-top: auto">
+  <div *ngIf="mode">
+    <div>
+      <main>
+        <form class="formularz" [formGroup]="emailForm" (ngSubmit)="sendEmail()" autocomplete="off">
+          <div>
+            <h1>
+              <span *ngIf="mode.includes('resend-confirmation-link')">
+                Wyślij ponownie link potwierdzajacy
+              </span>
+              <span *ngIf="mode.includes('forgot-username-or-password')">
+                Odzyskaj nazwę użytkownika lub haslo
+              </span>
+            </h1>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input formControlName="email" type="text" id="email" name="email" placeholder="E-mail" class="form-control"
+                   [class.is-invalid]="submitted && emailForm.get('email')?.errors" />
+            <span class="text-danger" *ngIf="submitted && emailForm.get('email')?.hasError('required')">
+              E-mail is required
+            </span>
+            <span class="text-danger" *ngIf="submitted && emailForm.get('email')?.hasError('pattern')">
+              E-mail is invalid
+            </span>
+
+          </div>
+          <div *ngIf="errorMessages.length >0">
+            <app-validation-messages [errorMessages]="errorMessages">
+
+            </app-validation-messages>
+
+          </div>
+
+          <div>
+            <button type="submit" class="register-button">Send</button>
+          </div>
+          <div>
+            <button type="submit" class="register-button" (click)="cancel()">Cancel</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+  </div>
+</div>

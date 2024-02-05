@@ -1,0 +1,37 @@
+<mat-toolbar style=" width: 100vw;">
+  <a routerLink="/" class="toolbar-logo-link">
+    <img src="assets/logo.jpg" alt="Logo" class="toolbar-logo" height="50">
+  </a>
+  <span class="toolbar-title">Your Trainer</span>
+  <span class="example-fill-remaining-space"></span>
+  <!-- <span *ngIf="(accountService.user$ | async) as user">{{user.FirstName}}</span>-->
+
+  <button class="mat-icon-button" (click)="this.spinner.startspinner()" routerLink="/items">
+    <mat-icon>view_quilt</mat-icon>
+  </button>
+
+ <!-- <button class="mat-icon-button" >
+      <mat-icon>calendar_today</mat-icon>
+    </button>
+
+  <button class="mat-icon-button" routerLink="/shopping-cart">
+      <mat-icon  matBadge="{{itemService.numberOfItems}}" [matBadgeHidden]="itemService.hidden" matBadgeColor="warn">add_shopping_cart</mat-icon>
+    </button>-->
+
+  <button *ngIf="(accountService.loggedIn===false)" class="mat-icon-button"  routerLink="/account/login">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+  <div>
+      <button *ngIf="(accountService.loggedIn===true)" class="mat-icon-button" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+
+      <button *ngIf="(accountService.loggedIn===true)" class="mat-icon-button" routerLink="/user">
+        <mat-icon>list_alt</mat-icon>
+      </button>
+
+    </div>
+
+
+</mat-toolbar>

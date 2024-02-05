@@ -1,0 +1,68 @@
+<div class="h" style="margin-top: auto">
+  <main>
+    <form class="formularz" [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+      <div>
+        <h3 class="login-title">Register</h3>
+      </div>
+      <div>
+        <label for="firstName">First Name</label>
+        <input formControlName="firstName" type="text" id="firstname" name="firstname" placeholder="First Name" class="form-control"
+               [class.is-invalid]="submitted && registerForm.get('firstName')?.errors" />
+        <span class="text-danger" *ngIf="submitted && registerForm.get('firstName')?.hasError('required')">
+          First name is required
+        </span>
+        <span class="text-danger" *ngIf="submitted &&
+              registerForm.get('firstName')?.hasError('minlength') || registerForm.get('firstName')?.hasError('maxlength')">
+          Imie musi miec minimum 3 i maximum 15 zanki
+        </span>
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input formControlName="lastName" type="text" id="lastName" name="lastName" placeholder="Last Name" class="form-control"
+               [class.is-invalid]="submitted && registerForm.get('lastName')?.errors" />
+        <span class="text-danger" *ngIf="submitted && registerForm.get('lastName')?.hasError('required')">
+          Last name is required
+        </span>
+        <span class="text-danger" *ngIf="submitted &&
+      registerForm.get('lastName')?.hasError('minlength') || registerForm.get('lastName')?.hasError('maxlength')">
+          Nazwisko musi miec minimum 3 i maximum 15 zanki
+        </span>
+      </div>
+      <div>
+        <label for="email">E-mail</label>
+        <input formControlName="email" type="text" id="email" name="email" placeholder="E-mail" class="form-control"
+               [class.is-invalid]="submitted && registerForm.get('email')?.errors" />
+        <span class="text-danger" *ngIf="submitted && registerForm.get('email')?.hasError('required')">
+          E-mail is required
+        </span>
+        <span class="text-danger" *ngIf="submitted && registerForm.get('email')?.hasError('pattern')">
+          E-mail is invalid
+        </span>
+
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input formControlName="password" type="password" id="password" name="password" placeholder="Password" class="form-control"
+               [class.is-invalid]="submitted && registerForm.get('password')?.errors" />
+        <span class="text-danger" *ngIf="submitted && registerForm.get('password')?.hasError('required')">
+          Password is required
+        </span>
+        <span class="text-danger" *ngIf="submitted &&
+          registerForm.get('password')?.hasError('minlength') || registerForm.get('password')?.hasError('maxlength')">
+          Hasło musi miec minimum 8 i maximum 15 zanki
+        </span>
+      </div>
+
+      <div *ngIf="errorMessages.length >0">
+        <app-validation-messages [errorMessages]="errorMessages">
+
+        </app-validation-messages>
+
+      </div>
+
+      <div>
+        <button type="submit" class="register-button">Create Account</button>
+      </div>
+    </form>
+  </main>
+</div>

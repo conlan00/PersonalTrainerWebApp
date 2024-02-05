@@ -1,0 +1,66 @@
+<div style="display: flex; justify-content: flex-end;">
+  <button routerLink="/user/diet" style="color: white;background-color:transparent;">Spersjonalizowa dieta dla ciebie   <mat-icon> fastfood</mat-icon></button>
+</div>
+
+
+<div class="h" style="margin-top: auto">
+
+  <mat-tab-group class="custom-tab-group" animationDuration="0ms" color="success">
+    <mat-tab class="custom-tab" label="Twoje Zamówienia">
+
+          <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let item of items; let i = index">
+              <img [src]="imageUrls[i]" alt="{{ item.name }}" alt="User Image" width="200" height="150">
+              </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Nazwa treningu </th>
+              <td mat-cell *matCellDef="let element"> {{element.item.name}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef> Cena </th>
+              <td mat-cell *matCellDef="let element"> {{element.item.price}} $ </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+              <th mat-header-cell *matHeaderCellDef> Ilość dni </th>
+              <td mat-cell *matCellDef="let element"> {{element.item.days}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-tab>
+    <mat-tab class="custom-tab" label="Twój Plan treningowy">
+      <mat-tab-group>
+
+        <ng-container *ngFor="let tab of lotsOfTabs; let i = index">
+          <mat-tab [label]="tab">
+            <table mat-table [dataSource]="getExercisesForDay(i + 1)" class="mat-elevation-z8">
+              <!-- Columns definition -->
+              <ng-container matColumnDef="exerciseName">
+                <th mat-header-cell *matHeaderCellDef> Exercise Name </th>
+                <td mat-cell *matCellDef="let element">{{element.exerciseName}}</td>
+              </ng-container>
+              <!-- Additional columns as needed -->
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+            </table>
+          </mat-tab>
+        </ng-container>
+      </mat-tab-group>
+    </mat-tab>
+  </mat-tab-group>
+</div>

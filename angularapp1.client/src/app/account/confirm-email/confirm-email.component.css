@@ -1,0 +1,20 @@
+.h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Zajmuje całą wysokość widoku */
+}
+.confirm {
+  margin-bottom: 2rem;
+  color: #fff; /* Kolor tytułu */
+  font-size: 2rem; /* Rozmiar tytułu */
+  text-decoration: underline;
+}
+.confirm:hover {
+  text-decoration: underline;
+  cursor: pointer; /* Zmiana kształtu kursora na "pointer" w momencie najechania myszką */
+}
+a {
+  color: #fff; /* Kolor tytułu */
+  font-size: 2rem; /* Rozmiar tytułu */
+}

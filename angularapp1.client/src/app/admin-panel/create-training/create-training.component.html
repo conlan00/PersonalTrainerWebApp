@@ -1,0 +1,185 @@
+
+<!--<div class="center-container" *ngIf="!refreshFlag">
+  <div class="left-container">
+    <div class="alert">
+      <div *ngIf="showSuccessAlert" class="alert alert-success">
+        <strong>Well done!</strong> You successfully added the offer.
+      </div>
+
+      <div *ngIf="showErrorAlert" class="alert alert-danger">
+        <strong>Oh snap!</strong> Something went wrong. Please try again.
+      </div>
+    </div>
+    <div>
+
+
+      <mat-card id="details" class="text-center">
+        <mat-card-header>
+          <mat-card-title>Nowa oferta</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <label for="imageInput">Wybierz zdjęcie:</label>
+          <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+          <div class="file-upload">
+            <img id="image-preview" [src]="imageSrc" alt="Podgląd" class="img-fluid" *ngIf="imageSrc">
+            <div *ngIf="!imageSrc">Brak zdjęcia</div>
+
+
+          </div>
+
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Wpisz nazwę ćwiczenia </mat-label>
+              <input type="text" matInput [formControl]="title" [errorStateMatcher]="matcher" placeholder="Ex. Fullbody  ">
+              @if (title.hasError('required')) {
+              <mat-error>Tytuł jest <strong>obowiązkowy</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Wpisz cenę w $</mat-label>
+              <input type="text" matInput [formControl]="price" [errorStateMatcher]="matcher" placeholder="Ex. 50 ">
+              @if (price.hasError('required')) {
+              <mat-error>Cena jest <strong>obowiązkowa</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Wpisz ilość dni trenigu</mat-label>
+              <input type="text" matInput [formControl]="days" [errorStateMatcher]="matcher" placeholder="Ex. 14  ">
+              @if (price.hasError('required')) {
+              <mat-error>Ilość dni jest <strong>obowiązkowa</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <button mat-button color="primary-grey" (click)="uploadFile()">Dodaj ofertę</button>
+          <button mat-mini-fab color="primary-grey" class="upload-btn" (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </mat-card-content>
+
+        <mat-card-actions>
+           Możesz dodać dodatkowe przyciski akcji tutaj 
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+  <div>
+    <mat-card id="details" class="text-center">
+      <mat-card-header>
+        <mat-card-title>Usuń ofertę ze sprzedaży</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="dropdown">
+          <mat-label>Twoje plany treningowe</mat-label>
+          <mat-select  [(ngModel)]="selectedItem">
+            @for (item of items; track item; let i=$index) {
+            <mat-option [value]="items[i]">{{item.name}}</mat-option>
+            }
+          </mat-select>
+
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-button color="primary-grey" (click)="deleteItem()">Usuń</button>
+    </mat-card>
+</div>
+</div>-->
+<div style="display:flex;">
+  <button routerLink="/admin">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <div style="color:white;">
+    Dodaj nową ofertę lub usuń isteniejącą.
+  </div>
+</div>
+
+<div id="main-container">
+
+  <div class="left">
+
+    
+
+
+      <mat-card id="details" class="text-center">
+        
+        <mat-card-header class="test1">
+          <mat-card-title >Nowa oferta</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="test1">
+          <label for="imageInput">Wybierz zdjęcie:</label>
+          <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+          <div class="file-upload" style="z-index:-1;">
+            <img id="image-preview" [src]="imageSrc" alt="Podgląd" class="img-fluid" *ngIf="imageSrc">
+            <div *ngIf="!imageSrc">Brak zdjęcia</div>
+
+
+          </div>
+
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Wpisz nazwę oferty </mat-label>
+              <input type="text" matInput [formControl]="title" [errorStateMatcher]="matcher" placeholder="Ex. Fullbody  ">
+              @if (title.hasError('required')) {
+              <mat-error>Tytuł jest <strong>obowiązkowy</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Wpisz cenę w $</mat-label>
+              <input type="text" matInput [formControl]="price" [errorStateMatcher]="matcher" placeholder="Ex. 50 ">
+              @if (price.hasError('required')) {
+              <mat-error>Cena jest <strong>obowiązkowa</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Wpisz ilość dni trenigu w ofercie</mat-label>
+              <input type="text" matInput [formControl]="days" [errorStateMatcher]="matcher" placeholder="Ex. 14  ">
+              @if (price.hasError('required')) {
+              <mat-error>Ilość dni jest <strong>obowiązkowa</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <button mat-button color="primary-grey" style="background-color:white;" (click)="uploadFile()">Dodaj ofertę</button>
+          <button mat-mini-fab color="primary-grey" class="upload-btn" (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+  <div class="right">
+    <mat-card id="details2" class="text-center">
+      <mat-card-header class="test">
+        <mat-card-title>Usuń ofertę ze sprzedaży</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="test">
+        <mat-form-field class="dropdown">
+          <mat-label>Twoje plany treningowe</mat-label>
+          <mat-select [(ngModel)]="selectedItem">
+            @for (item of items; track item; let i=$index) {
+            <mat-option [value]="items[i]">{{item.name}}</mat-option>
+            }
+          </mat-select>
+
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-button color="primary-grey" style="background-color:white;" (click)="deleteItem()" class="test">Usuń</button>
+    </mat-card>
+  </div>
+  <router-outlet></router-outlet>
+
+</div>

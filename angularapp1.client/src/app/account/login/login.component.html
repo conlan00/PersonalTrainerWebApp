@@ -1,0 +1,47 @@
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<div class="h" style="margin-top: auto">
+  <main>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+      <div>
+        <h3 class="login-title">Sign in</h3>
+      </div>
+      <div>
+        <label for="username">Username</label>
+        <input formControlName="userName" type="text" id="username" name="username" placeholder="Username (your email address)" class="form-control"
+               [class.is-invalid]="submitted && loginForm.get('userName')?.errors" />
+        <span class="text-danger" *ngIf="submitted && loginForm.get('userName')?.hasError('required')">
+          Username is required
+        </span>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input formControlName="password" type="password" id="password" name="password" placeholder="Password" class="form-control"
+               [class.is-invalid]="submitted && loginForm.get('password')?.errors" />
+        <span class="text-danger" *ngIf="submitted && loginForm.get('password')?.hasError('required')">
+          Password is required
+        </span>
+      </div>
+
+      <div *ngIf="errorMessages.length >0">
+        <app-validation-messages [errorMessages]="errorMessages">
+
+        </app-validation-messages>
+        <a class="text-danger" (click)="resendEmailConfirmationLink()"
+           *ngIf="errorMessages[0].includes('Prosze potwierdzic email')">
+          Kliknij tutaj aby wyslac ponownie mail potwierdzajacy.
+        </a>
+      </div>
+      <div>
+        <button type="submit" class="login-button">Log in</button>
+      </div>
+      <app-login-google></app-login-google>
+      </form>
+          <div class="link-container">
+            <a routerLink="/account/send-email/forgot-username-or-password" class="btn btn-link">Forgot username or password</a>
+            <span>|</span>
+            <a routerLink="/account/register" class="btn btn-link">Register</a>
+          </div>
+
+        </main>
+      </div>

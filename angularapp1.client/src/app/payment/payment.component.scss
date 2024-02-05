@@ -1,0 +1,96 @@
+.h {
+  margin-left: 30%;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.example-card {
+  max-width: 400px;
+  margin: 8px auto;
+}
+
+.mat-stepper-vertical, .mat-stepper-horizontal {
+  font-family: var(--mat-stepper-container-text-font);
+  background-color: transparent;
+}
+
+.product-title, .product-subtitle {
+  color: snow;
+}
+
+.button-next {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+
+button-next:hover {
+  background-color: #ffd800;
+}
+
+
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 3px;
+  background-color: white;
+}
+
+
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-family: var(--mat-stepper-container-text-font);
+  background-color: #2b2b2b;
+}
+
+
+.product-info {
+  flex-basis: 100px;
+}
+
+.peda {
+  color: snow;
+}
+
+
+::ng-deep .mat-step-icon-selected {
+  --mat-stepper-header-selected-state-icon-background-color: white !important;
+  --mat-stepper-header-selected-state-icon-foreground-color: black !important;
+}
+
+
+::ng-deep .mat-step-icon-state-edit {
+  --mat-stepper-header-edit-state-icon-background-color: white !important;
+  --mat-stepper-header-edit-state-icon-foreground-color: black !important;
+}
+
+::ng-deep .mat-step-icon {
+  --mat-stepper-header-icon-foreground-color: black !important;
+  --mat-stepper-header-icon-background-color: white !important;
+  ;
+}
+
+::ng-deep .mat-step-label.mat-step-label-active {
+  --mat-stepper-header-selected-state-label-text-color: white !important;
+  ;
+}

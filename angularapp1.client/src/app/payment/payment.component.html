@@ -1,0 +1,49 @@
+<head>
+  <script src="https://www.paypal.com/sdk/js?client-id= YOUR PAYAPL KEY"></script>
+</head>
+
+<body>
+  <div class="h" style="margin-top: auto">
+    <mat-stepper orientation="vertical">
+      <mat-step>
+        <ng-template matStepLabel>TWÓJ PLAN TRENINGOWY</ng-template>
+        <ng-template matStepContent>
+          <mat-card class="example-card">
+            <mat-card-header class="product-header">
+
+              <div class="product-info">
+                <mat-card-title class="product-title">{{item}}</mat-card-title>
+                <mat-card-subtitle class="product-subtitle">{{price}} $</mat-card-subtitle>
+              </div>
+              <div class="product-card">
+
+                <img mat-card-lg-image [src]="url">
+              </div>
+
+            </mat-card-header>
+
+          </mat-card>
+          <button mat-button matStepperNext class="button-next">Next</button>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>PŁATNOŚĆ</ng-template>
+        <ng-template matStepContent>
+
+          <app-paypal-button></app-paypal-button>
+          <p>{{paymentService.info}}</p>
+          <button mat-button matStepperPrevious class="button-next">Back</button>
+          &nbsp;
+          <button mat-button matStepperNext class="button-next">Next</button>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>FINALIZACJA TRANSAKCJI</ng-template>
+        <p class="peda">Dziękuję za zakup planu treningowego {{item}}</p>
+        <button mat-button matStepperNext style="color:black; background-color:white;">Next</button>
+      </mat-step>
+    </mat-stepper>
+  </div>
+
+</body>
+

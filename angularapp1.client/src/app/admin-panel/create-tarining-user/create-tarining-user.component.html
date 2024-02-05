@@ -1,0 +1,311 @@
+<div style="display:flex;">
+  <button routerLink="/admin">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <div style="color:white;">
+    Stwórz trening.
+  </div>
+</div>
+<div id="main-container">
+  <div class="top">
+    <div class="text">
+      Wybierz użytkownika, ćwiczenie oraz dzień na jaki chcesz mu ułożyć trening
+    </div>
+    <div class="second">
+      <div class="trening">
+        <mat-card class="text-center">
+          <mat-card-header class="test">
+            <mat-card-title style="font-size:1.3rem;">Wybrany plan trenigowy:</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="test1">
+            {{plan}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="center-div">
+        <div style="display:flex;">
+          <mat-card id="details2" class="text-center">
+            <mat-card-header class="test">
+              <mat-card-title>Wybierz użytkownika</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="test">
+              <mat-form-field class="dropdown">
+                <mat-label>Użytkownicy</mat-label>
+                <mat-select [(ngModel)]="selectedId" (ngModelChange)="onChange1()">
+                  @for (item of emptyUsers; track item; let i=$index) {
+                  <mat-option [value]="emptyUsers[i]">{{item.IdTransaction}}</mat-option>
+                  }
+                </mat-select>
+
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+          <mat-card id="details2" class="text-center">
+            <mat-card-header class="test">
+              <mat-card-title>Wybierz ćwiczenia</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="test">
+              <mat-form-field class="dropdown">
+                <mat-label>Ćwiczenia</mat-label>
+                <mat-select [(ngModel)]="selectedExercises" [formControl]="toppings" multiple>
+                  @for (exer of exercises; track exer) {
+                  <mat-option [value]="exer">{{exer.Name}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+          <mat-card id="details2" class="text-center">
+            <mat-card-header class="test">
+              <mat-card-title>Wybierz dzień</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="test">
+              <mat-form-field class="dropdown">
+                <mat-label>Dzień</mat-label>
+                <mat-select [(ngModel)]="selectedDay">
+                 @for (item of lotsOfTabs; track item; let i=$index) {
+                  <mat-option [value]="lotsOfTabs[i]">{{item}}</mat-option>
+                  }
+                      </mat-select>
+
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        
+<!--       <button mat-button color="primary-grey" style="background-color:white;" (click)="getExercisesForDay(1)" class="test">oj;hioj</button>
+-->      </div>
+    </div>
+    <div>
+      <button   mat-button color="primary-grey" style="background-color:white;margin-left:30%" (click)="addToArray()">Zatwierdź</button>
+      <button   mat-button color="primary-grey" style="background-color:white;margin-left:25%" (click)="saveTraining()" >Zapisz</button>
+    </div>
+  </div>
+  <div class="bottom">
+   <div class="preview">
+     Podgląd planu treningowego!
+   </div>
+    <mat-tab-group>
+      <!--[dataSource]="getExercisesForDay(i + 1)"-->
+      <ng-container *ngFor="let tab of lotsOfTabs; let i = index">
+        <mat-tab class="nag" [label]="'Day '+tab">
+          <section class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="getExercisesForDay(i+1)" class="mat-elevation-z8">
+              Columns definition
+              <ng-container matColumnDef="lp">
+                <th mat-header-cell *matHeaderCellDef style="width: 10px;"> Lp. </th>
+                <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td>
+              </ng-container>
+              <ng-container matColumnDef="exerciseName">
+                <th mat-header-cell *matHeaderCellDef> Nazwa ćwiczenia </th>
+                <td mat-cell *matCellDef="let element" style="display:flex;align-items:center;height:52px;">
+                  {{element.exerciseName}}
+                  <button class="mat-icon-button" (click)="deleteButton(element.exerciseName,i+1)" style="background-color:transparent; border:none; color:white;">
+                    <mat-icon>delete_forever</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              Additional columns as needed
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+            </table>
+            </section>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
+    
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div id="main-container">
+  <div class="left">
+    <div class="left-top">
+      <div class="left-top-left">
+
+        <div class="ilosc">
+          <div class="ile">
+            <h2>Ilość użytkowników bez ułożonego treningu</h2>
+            <p class="count-users">12</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="left-top-right">
+        <section class="example-container mat-elevation-z8" tabindex="0">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+         Position Column 
+        <ng-container matColumnDef="position">
+         <th mat-header-cell *matHeaderCellDef> Lp. </th>
+         <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+         Name Column 
+        <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Użytkownik </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+         Weight Column 
+        <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Kupiony trening </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </section>
+      </div>
+    </div>
+    <div class="left-bottom">
+      <div class="left-bottom-left">
+        <section class="example-container2 mat-elevation-z8" tabindex="0">
+          <table mat-table [dataSource]="dataSource">
+            Position Column
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> Lp. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+            Name Column
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Ćwiczenie </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+          </table>
+        </section>
+      </div>
+      <div class="left-bottom-right">
+          <div style=" height: 25vh; text-align: center; display: flex; justify-content: center;">
+            <div style="margin-top:2rem">
+              <mat-form-field>
+                <mat-label>Input</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+           
+         
+          </div>
+          <div style=" height: 25vh; text-align: center;  ">
+           <button mat-button style="background-color:aliceblue;">Basic</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-top">
+      <div class="dodanie">
+        <div>
+          <div>
+            <mat-form-field>
+              <mat-label>Dzień</mat-label>
+              <mat-select>
+                <mat-option>None</mat-option>
+                @for (state of foods; track state) {
+                <mat-option [value]="state">{{state.viewValue}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Ćwiczenie</mat-label>
+              <mat-select>
+                <mat-option>None</mat-option>
+                @for (state of foods; track state) {
+                <mat-option [value]="state">{{state.viewValue}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+          </div>
+
+          <mat-form-field style="margin-right: 2rem;">
+            <mat-label>Użytkownik</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              @for (state of foods; track state) {
+              <mat-option [value]="state">{{state.viewValue}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button style="background-color:aliceblue;">Basic</button>
+        </div>
+
+
+      </div>
+      <div class="opis">
+        Description
+      </div>
+    </div>
+    <div class="right-bottom">
+      <section class="example-container3 mat-elevation-z8" tabindex="0">
+        <table mat-table [dataSource]="dataSource">
+          Position Column
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> Lp. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          Name Column
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Ćwiczenie </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+        </table>
+      </section>
+    </div>
+  </div>
+ 
+</div>
+-->

@@ -1,0 +1,129 @@
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.alert-container {
+  position: relative;
+  z-index: 1;
+}
+
+.alert {
+  height: 5vh;
+  width: 20vw;
+}
+
+.left-container {
+  width: 27vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  display: flex;
+}
+
+.file-input {
+  display: none;
+}
+#image-preview {
+  max-width: 768px;
+  max-height: 380px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: 30vh;
+  width: 27vw;
+  margin-left: 10vw;
+  text-align: center;
+}
+
+
+.right {
+  height: 100vh;
+  width: 50vw;
+}
+
+#main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  height: 100vh;
+  width: 50vw;
+  position: relative;
+}
+
+#details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1; 
+}
+
+#details {
+  margin-left: 2.5rem;
+  height: 100vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../../images/diet.jpg');
+  background-size: cover;
+  position: relative;
+  color: white; 
+}
+
+  #details .test1 {
+    z-index: 2;
+  }
+
+#details2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+#details2 {
+  margin-left: 2.5rem;
+  height: 100vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ /* background-image: url('../../../images/delete.jpg');
+  background-size: cover;*/
+ background-color:white;
+  position: relative;
+  color: white; 
+}
+
+  #details2 .test {
+    z-index: 2; 
+  }
+
+.example-full-width {
+  width: 30vw;
+}

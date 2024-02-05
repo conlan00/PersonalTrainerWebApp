@@ -1,0 +1,10 @@
+<div class="h" style="margin-top: auto">
+  <div class="confirm" *ngIf="success">
+    <a routerLink="/account/login">Login</a>
+  </div>
+  <div class="confirm" *ngIf="!success">
+    <a (click)="resendEmailConfirmationLink()">
+      Nacisnij tu aby ponownie wyslac link potwierdzjacy
+    </a>
+  </div>
+</div>

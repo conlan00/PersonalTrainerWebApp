@@ -1,0 +1,4 @@
+C:\Users\yy\Desktop\bug\angularapp1.client\obj\Debug\frontend.esproj.CoreCompileInputs.cache
+F:\wat\7 sem\TAI\webApp\!!DZIALA\TaiZal\angularapp1.client\obj\Debug\frontend.esproj.CoreCompileInputs.cache
+F:\wat\7 sem\!!DZIALA\TaiZal\angularapp1.client\obj\Debug\frontend.esproj.CoreCompileInputs.cache
+C:\Users\yy\Desktop\FInal\TaiZal\angularapp1.client\obj\Debug\frontend.esproj.CoreCompileInputs.cache
