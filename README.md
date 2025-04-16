@@ -11,7 +11,7 @@ The web application for a personal trainer is a tool designed to facilitate the 
 - **Monitoring:** You can see your total revenue, your total income per day in last week, number of users and most frequently selected training offers
 - **Paypal payments:** Transaction is created after using Paypal payments
 - **Google API:** Everyone can use your own Google account for log in into your trianer system.
-- **MailJet API:** If users create accounts on your website, mailjet is sending verification email.
+- **MailJet API:** If users create accounts on your website, mailjet is sending verification email. 
 
 ## Requirements and installation
 ### Software Dependencies
